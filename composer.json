@@ -1,0 +1,14 @@
+{
+    "name": "lanyu/jutuike",
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "verwirrt",
+            "email": "2432775177@qq.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"Jutuike\\": "src/"}
+    },
+    "require": {}
+}
