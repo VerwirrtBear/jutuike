@@ -38,7 +38,6 @@ class Helper
     {
         $parms["apikey"] = env("jutuike_apikey");
         $parms["pub_id"] = env("jutuike_pubId");
-
         $q = http_build_query($parms);
         $url .= '?'.$q;
         $url = self::$baseurl1 .$url;
