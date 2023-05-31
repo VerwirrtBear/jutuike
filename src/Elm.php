@@ -8,16 +8,37 @@ class Elm
 
     /** 
      * @Purpose: 
-     * 聚推客联盟活动列表
-     * @param  string $sid 	渠道标识，自定义参数，长度不超过30位，建议在用户领券时调用该接口获取推广链接，切勿提前批量请求创建；
-     * @param  int $type 红包类型 3-饿了么浏览店铺得红包活动（不支持h5推广链接，只支持小程序推广） 4-饿了么外卖活动 5-饿了么新零售（只支持小程序推广）
-     * 
+     * 饿了么外卖/生鲜红包活动转链接口
+     * @param array  $data 参考聚推客 
      * @return array []
      * 
      */
-    public static function actList($sid = "", $type = 3)
+    public static function act($data=[])
     {
-        $url = '/Ele/act';
-        return  Helper::get($url, []);
+        return  Helper::get('/Ele/act', $data);
+    }
+
+    /** 
+     * @Purpose: 
+     * 饿了么单店推广店铺列表
+     * @param array  $data 参考聚推客 
+     * @return array []
+     * 
+     */
+    public static function store_list($data=[])
+    {
+        return  Helper::get('/ele/store_list', $data);
+    }
+
+    /** 
+     * @Purpose: 
+     * 饿了么单店推广单店铺查询
+     * @param array  $data 参考聚推客 
+     * @return array []
+     * 
+     */
+    public static function store_promotion($data=[])
+    {
+        return Helper::get('/ele/store_promotion', $data);
     }
 }

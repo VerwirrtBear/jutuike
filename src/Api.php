@@ -10,10 +10,10 @@ class Api
     /** 
      * @Purpose: 
      * 聚推客联盟活动列表
-     * @param  string $page 	页码 默认 1 false
-     * @param  string $pageSize 每页显示多少 默认 20 最大 100 false 
-     * @param  string $xcx_spread 是否支持微信小程序 0-全部 1-支持小程序 false
-     * @param  string $alipay_xcx_spread 是否支持支付宝小程序 0-全部 1-支持小程序 false
+     * @param  string $data[page] 	页码 默认 1 false
+     * @param  string $data[pageSize] 每页显示多少 默认 20 最大 100 false 
+     * @param  string $data[xcx_spread] 是否支持微信小程序 0-全部 1-支持小程序 false
+     * @param  string $data[alipay_xcx_spread] 是否支持支付宝小程序 0-全部 1-支持小程序 false
      * 
      * @return array {
      *      int  act_id 活动ID,
@@ -25,10 +25,9 @@ class Api
      * }
      * 
      */
-    public static function actList($page = 1, $pageSize = 20, $xcx_spread = 0, $alipay_xcx_spread = 0)
+    public static function actList($data= [])
     {
-        $url = '/union/act_list';
-        return  Helper::get($url, []);
+        return  Helper::get('/union/act_list', $data);
     }
 
     /** 
@@ -55,16 +54,15 @@ class Api
     /** 
      * @Purpose: 
      * 聚推客联盟统一活动转链接口
-     * @param  string $sid 	自定义参数跟单  true
-     * @param  int $act_id     活动ID，聚推客联盟活动列表接口获取 actList  true 
+     * @param  string $data[sid]  	自定义参数跟单  true
+     * @param  int $data[act_id]    活动ID，聚推客联盟活动列表接口获取 actList  true 
      * 
      * @return array []
      * 
      */
 
-    public static function act($sid = "", $act_id = "")
+    public static function act($data)
     {
-        $url = '/union/act';
-        return  Helper::get($url, []);
+        return  Helper::get('/union/act', $data);
     }
 }
