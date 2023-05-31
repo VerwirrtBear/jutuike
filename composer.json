@@ -10,5 +10,6 @@
     "autoload": {
         "psr-4": {"Jutuike\\": "src/"}
     },
-    "require": {}
+    "require": {},
+    "license": "MIT"
 }
